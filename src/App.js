@@ -14,11 +14,14 @@ class App extends React.Component {
     score: 0,
   };
 
+
+  //data.results[current_Index]
   async componentDidMount() {
     const url = "https://opentdb.com/api.php?amount=10&category=15&type=boolean";
     const response = await fetch(url);
     const data = await response.json();
     let current_Index = this.state.current_Index;
+    data.results[current_Index]['question'] =  this.decodeHtml(data.results[current_Index]['question']);
       this.setState({ 
         data: data.results[current_Index] ,
         loading: false,
@@ -28,6 +31,12 @@ class App extends React.Component {
         })
  //      console.log(data)
  //       console.log(this.state.questions);
+  }
+
+  decodeHtml = (texto_pregunta) => {
+    let areaElement = document.createElement("textarea");
+    areaElement.innerHTML = texto_pregunta;
+    return areaElement.value;
   }
 
  selectOption  = (event) => {
@@ -63,6 +72,7 @@ class App extends React.Component {
     /* data /*es la pregunta actual*/
     /* rightAnswer: data.results[current_Index].correct_answer, */
     let index = this.state.current_Index + 1;
+    this.state.questions[this.state.current_Index]['question'] =  this.decodeHtml(this.state.questions[this.state.current_Index]['question']);
     this.setState({
       current_Index: index,
       //data pasa a ser la siguiente pregunta (siguiente posicion de indice)
