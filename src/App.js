@@ -21,8 +21,10 @@ class App extends React.Component {
     const response = await fetch(url);
     const data = await response.json();
     let current_Index = this.state.current_Index;
-    data.results[current_Index]['question'] =  this.decodeHtml(data.results[current_Index]['question']);
-      this.setState({ 
+    for (var i = 0; i < data.results.length; i+=1) {
+      data.results[i]['question'] = this.decodeHtml(data.results[i]['question']);
+    } 
+    this.setState({ 
         data: data.results[current_Index] ,
         loading: false,
         questions: data.results,
@@ -72,7 +74,7 @@ class App extends React.Component {
     /* data /*es la pregunta actual*/
     /* rightAnswer: data.results[current_Index].correct_answer, */
     let index = this.state.current_Index + 1;
-    this.state.questions[this.state.current_Index]['question'] =  this.decodeHtml(this.state.questions[this.state.current_Index]['question']);
+
     this.setState({
       current_Index: index,
       //data pasa a ser la siguiente pregunta (siguiente posicion de indice)
