@@ -19,9 +19,8 @@ class App extends React.Component {
     const response = await fetch(url);
     const data = await response.json();
     let current_Index = this.state.current_Index;
-    //const myArrStr = JSON.stringify(myArr);
       this.setState({ 
-        data: pregunta ,
+        data: data.results[current_Index] ,
         loading: false,
         questions: data.results,
         rightAnswer: data.results[current_Index].correct_answer,
