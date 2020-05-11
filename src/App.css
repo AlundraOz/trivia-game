@@ -1,5 +1,7 @@
-.App {
+div#root {
   text-align: center;
+  background: #2c3e50;
+  min-height: 100vh;
 }
 
 

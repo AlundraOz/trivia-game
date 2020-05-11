@@ -1,0 +1,97 @@
+//Colores
+$green: #2ecc71;
+$red: #e74c3c;
+$yellow: #f1c40f;
+
+.main {
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   height: 100%;
+   background: #2c3e50;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 16px;
+   justify-content: space-around;
+   text-align: center;
+}
+
+.main-title {
+    color: $yellow;
+    font-size: 4rem;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding-top: 20vh;
+}
+
+//scss para botones sin seleccionar
+
+.buttons {
+    display: inline-flex;
+    margin: auto;
+}
+
+#btn-true {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid $yellow;
+    border-radius: 0.6em;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    &:hover {
+        color: #fff;
+        outline: 0;
+    }
+}
+
+#btn-false {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid $yellow;
+    border-radius: 0.6em;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    &:hover {
+     color: #fff;
+     outline: 0;
+    }
+}
+
+//scss para cuando se seleccione la respuesta correcta o incorrecta
+.green {
+    color: #fff;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    box-shadow: 0 0 40px 40px $green inset;
+}
+
+.red {
+    color: #fff;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    box-shadow: 0 0 40px 40px $red inset;
+}

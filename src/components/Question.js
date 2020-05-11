@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Question.scss';
 
 function Question(props) {
     return (
